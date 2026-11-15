@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{% assign c = site.data.codes | where: "n", page.code | first %}{% assign n = c.n %}
+<section class="hero" style="padding-bottom:20px"><div class="narrow">
+<div class="crumbs"><a href="{{ page.b }}index.html">Home</a> › <a href="index.html">Number library</a> › {{ n }}</div>
+<span class="tag {{ c.col }}">{{ c.label }}</span>
+<h1 style="margin-top:12px"><span class="mono grad-text">{{ n }}</span> meaning: “{{ c.m | escape }}”</h1>
+<p class="lead"><b>Quick answer:</b> {{ n }} means <b>“{{ c.m | escape }}”</b> in Chinese number slang, from <b>{{ c.zh }}</b> (<i>{{ c.py | escape }}</i>).</p>
+</div></section>
+<section style="padding-top:10px"><div class="narrow article">
+<h2>Digit-by-digit breakdown</h2>
+<div class="digits">{% assign ds = n | split: "" %}{% for d in ds %}{% assign g = site.data.digits[d] %}<div class="digit {% if g.v > 1 %}good{% elsif g.v < 0 %}bad{% endif %}"><span class="d">{{ d }}</span><span class="z">{{ g.zh }}</span><span class="w">{{ g.py }}</span><span class="w">{{ g.w }}</span></div>{% endfor %}</div>
+<div class="result" style="margin-top:16px"><div class="kv"><span>Reading</span><b>{{ c.zh }} · {{ c.m | escape }}</b></div>
+<div class="kv"><span>Digit sum → root number</span><b>{{ c.sum }} → {{ c.root }}</b></div><div class="kv"><span>Auspiciousness score</span><b>{{ c.score }}/100</b></div><div class="meter"><i style="width:{{ c.score }}%"></i></div></div>
+<h2>What {{ n }} means and why</h2>
+<p>{{ c.note | escape }}</p>
+<p>{% case c.cat %}{% when "love" %}This is a love code, so it works best in personal messages, gifts, anniversaries and seasonal romance promotions.{% when "luck" %}This is a luck code: you will see it in prices, phone numbers, shop openings and gift money.{% when "chat" %}This is everyday chat slang — common in comments, livestreams and messaging, not in formal writing.{% else %}This code has a negative or rude reading, so keep it out of prices, quantities, SKUs and gift amounts aimed at Chinese-speaking audiences.{% endcase %}</p>
+<h2>Where you’ll see {{ n }}</h2>
+<p>{{ c.use | escape }}</p>
+<h2>Make it personal</h2>
+<p>Combine {{ n }} with your own numbers in the <a href="{{ page.b }}decoder.html?n={{ n }}">decoder</a>, build a custom message with the <a href="{{ page.b }}tools.html#builder">love-code builder</a>, or turn it into a gift amount with the <a href="{{ page.b }}tools.html#amount">lucky amount calculator</a>.</p>
+<div class="cta-row"><a class="btn btn-primary" href="{{ page.b }}decoder.html?n={{ n }}">Decode {{ n }} live</a><button class="btn btn-ghost" data-share data-text="{{ n }} means “{{ c.m | escape }}” — decoded on 520998.com">Share this meaning</button></div>
+<h2>FAQ</h2>
+{% capture q3 %}{% if c.cat == "love" or c.cat == "luck" %}It is considered a positive, auspicious code.{% elsif c.cat == "avoid" %}Its meaning is casual or negative rather than lucky.{% else %}It is neutral chat slang.{% endif %}{% endcapture %}
+<div class="faq"><details><summary>What does {{ n }} mean?</summary><p>{{ n }} means “{{ c.m | escape }}”. It comes from {{ c.zh }} ({{ c.py | escape }}) — the digits sound similar in Mandarin.</p></details><details><summary>Is {{ n }} a lucky number?</summary><p>On our homophone scale {{ n }} scores {{ c.score }}/100. {{ q3 }}</p></details><details><summary>How do you use {{ n }}?</summary><p>{{ c.use | escape }}</p></details></div>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":{{ "What does " | append: n | append: " mean?" | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ n | append: " means “" | append: c.m | append: "” (" | append: c.zh | append: ", " | append: c.py | append: ")." | jsonify }}}},{"@type":"Question","name":{{ "How do you use " | append: n | append: "?" | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ c.use | jsonify }}}}]}</script>
+<h2>Related codes</h2>
+<div class="num-grid">{% assign rel = site.data.codes | where: "cat", c.cat %}{% assign k = 0 %}{% for x in rel %}{% if x.n != n and k < 6 %}{% assign k = k | plus: 1 %}<a class="num-card" href="{{ x.n }}.html"><b>{{ x.n }}</b><span>{{ x.m | escape }}</span></a>{% endif %}{% endfor %}</div>
+</div></section>
+{% include report.html %}
