@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<section class="hero" style="padding-bottom:10px"><div class="narrow">
+<div class="crumbs"><a href="{{ page.b }}index.html">Home</a> › <a href="index.html">Guides</a> › {{ page.short | escape }}</div>
+<span class="tag">{{ page.tag }}</span><h1 style="margin-top:12px">{{ page.title | escape }}</h1>
+<div class="byline">By the 520998 editorial team · {{ page.mins }} min read · Updated {{ site.time | date: "%B %Y" }}</div></div></section>
+<section style="padding-top:0"><div class="narrow article">
+{{ content }}
+<h2>Frequently asked questions</h2><div class="faq">{% for f in page.faq %}<details><summary>{{ f.q | escape }}</summary><p>{{ f.a | escape }}</p></details>{% endfor %}</div>
+<div class="cta-row" style="margin-top:28px"><button class="btn btn-ghost" data-share data-text="{{ page.title | escape }}">Share this guide</button><a class="btn btn-primary" href="{{ page.b }}decoder.html">Decode a number</a></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap"><h2>Keep reading</h2><div class="grid g3">{% assign gs = site.pages | where: "layout", "guide" | sort: "order" %}{% for g in gs %}{% unless g.url == page.url %}<a class="card" href="{{ g.url | split: "/" | last }}"><span class="tag">{{ g.tag }}</span><h3 style="margin-top:10px">{{ g.short | escape }}</h3><p class="small muted">{{ g.mins }} min read</p></a>{% endunless %}{% endfor %}</div></div></section>
+{% include report.html %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"author":{"@type":"Organization","name":"520998.com Editorial"},"publisher":{"@type":"Organization","name":"520998.com"},"datePublished":"2026-11-15","dateModified":"{{ site.time | date: "%Y-%m-%d" }}","mainEntityOfPage":"{{ site.url }}{{ page.url }}"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{% for f in page.faq %}{"@type":"Question","name":{{ f.q | jsonify }},"acceptedAnswer":{"@type":"Answer","text":{{ f.a | jsonify }}}}{% unless forloop.last %},{% endunless %}{% endfor %}]}</script>
