@@ -1,0 +1,5 @@
+title: "520998 · Love Codes & Lucky Numbers"
+url: "https://520998.com"
+baseurl: ""
+markdown: kramdown
+exclude: [README.md, RESEARCH.md, BUILD-PROMPTS.md]
