@@ -1,0 +1,36 @@
+---
+layout: default
+title: "Free Love & Luck Number Tools: Gift Amounts, Lucky Prices, Love Codes"
+description: "Six free tools: lucky gift & red-envelope amount calculator, lucky price calculator for sellers, love-code builder, name-number match and a live love-days calendar."
+b: ""
+---
+<section class="hero" style="padding-bottom:10px"><div class="wrap"><div class="eyebrow">Free tools</div><h1>Love &amp; luck, <span class="grad-text">calculated.</span></h1>
+<p class="lead">Pick a tool. Everything runs in your browser — nothing you type is stored.</p>
+<div class="pill-row"><a class="chip" href="#builder">Love-code builder</a><a class="chip" href="#amount">Lucky amount</a><a class="chip" href="#price">Lucky price</a><a class="chip" href="#match">Name match</a><a class="chip" href="#calendar">Love-days calendar</a><a class="chip" href="{{ page.b }}decoder.html">Decoder</a><a class="chip" href="{{ page.b }}gifts.html">Gift finder</a></div></div></section>
+
+<section id="builder"><div class="wrap split"><div><div class="eyebrow">Tool 1</div><h2>Love-code builder</h2><p class="muted">Tick phrases in the order you want them. We chain the codes into one secret number message you can text, engrave or hide in a gift.</p>
+<form id="builderForm"><div class="opt-grid"><label class="opt"><input type="checkbox" name="phrase" value="520" checked> <span><b class="mono">520</b> I love you</span></label><label class="opt"><input type="checkbox" name="phrase" value="521"> <span><b class="mono">521</b> I&#x27;m willing / I love you</span></label><label class="opt"><input type="checkbox" name="phrase" value="1314" checked> <span><b class="mono">1314</b> for a whole lifetime</span></label><label class="opt"><input type="checkbox" name="phrase" value="530"> <span><b class="mono">530</b> I miss you</span></label><label class="opt"><input type="checkbox" name="phrase" value="5230"> <span><b class="mono">5230</b> I&#x27;ve fallen for you</span></label><label class="opt"><input type="checkbox" name="phrase" value="920"> <span><b class="mono">920</b> I just love you</span></label><label class="opt"><input type="checkbox" name="phrase" value="9420"> <span><b class="mono">9420</b> it&#x27;s you I love</span></label><label class="opt"><input type="checkbox" name="phrase" value="1920"> <span><b class="mono">1920</b> I still love you</span></label><label class="opt"><input type="checkbox" name="phrase" value="3344"> <span><b class="mono">3344</b> life after life</span></label><label class="opt"><input type="checkbox" name="phrase" value="1711"> <span><b class="mono">1711</b> wholehearted, devoted</span></label><label class="opt"><input type="checkbox" name="phrase" value="8013"> <span><b class="mono">8013</b> by your side for life</span></label><label class="opt"><input type="checkbox" name="phrase" value="584"> <span><b class="mono">584</b> I swear / I promise</span></label><label class="opt"><input type="checkbox" name="phrase" value="9277"> <span><b class="mono">9277</b> love kisses</span></label></div></form></div>
+<div class="card" id="builderOut" aria-live="polite"></div></div></section>
+
+<section id="amount"><div class="wrap split"><div><div class="eyebrow">Tool 2</div><h2>Lucky gift &amp; red-envelope amount</h2><p class="muted">Enter your budget and occasion; get the nearest auspicious amounts (never containing 4) and love-code options.</p>
+<form id="amountForm" class="card"><div class="row2"><div class="field"><label for="amtBudget">Budget</label><input id="amtBudget" type="number" min="1" value="500"></div>
+<div class="field"><label for="amtCur">Currency symbol</label><select id="amtCur"><option>$</option><option>¥</option><option>€</option><option>£</option><option>₹</option><option>RM</option><option>S$</option><option>HK$</option></select></div></div>
+<div class="field"><label for="amtOcc">Occasion</label><select id="amtOcc"><option value="love">520 / Valentine’s / anniversary</option><option value="wedding">Wedding</option><option value="newyear">Lunar New Year</option><option value="birthday">Birthday</option><option value="business">Business gift / opening</option><option value="funeral">Condolence</option></select></div>
+<button class="btn btn-primary btn-block" type="submit">Find lucky amounts</button></form></div>
+<div class="card"><h3>Your amounts</h3><div id="amtOut" class="result"><p class="muted">Results appear here.</p></div><p class="small muted" style="margin-top:12px">Etiquette varies by family and region. See the <a href="{{ page.b }}guides/red-envelope-gift-amounts.html">red-envelope guide</a>.</p></div></div></section>
+
+<section id="price"><div class="wrap split"><div><div class="eyebrow">Tool 3 · For sellers</div><h2>Lucky price calculator</h2><p class="muted">Turn a base price into charm, 8-ending, prestige and seasonal love-code prices — with margin if you add your unit cost.</p>
+<form id="priceForm" class="card"><div class="row2"><div class="field"><label for="prBase">Base price</label><input id="prBase" type="number" step="0.01" min="0.5" value="24"></div>
+<div class="field"><label for="prCost">Unit cost (optional)</label><input id="prCost" type="number" step="0.01" min="0" value="9"></div></div>
+<div class="field"><label for="prCur">Currency</label><select id="prCur"><option>$</option><option>¥</option><option>€</option><option>£</option><option>₹</option></select></div>
+<button class="btn btn-primary btn-block" type="submit">Generate prices</button></form>
+<p class="small" style="margin-top:12px">Running a promotion? <a href="{{ page.b }}brands.html">Get the free 520 campaign kit →</a></p></div>
+<div class="card"><h3>Price options</h3><div id="prOut" class="result"><p class="muted">Results appear here.</p></div></div></div></section>
+
+<section id="match"><div class="wrap split"><div><div class="eyebrow">Tool 4 · For fun</div><h2>Name-number love match</h2><p class="muted">Classic Pythagorean name numerology turns each name into a number from 1 to 9. We show both, a playful harmony score and your personal couple code.</p>
+<form id="matchForm" class="card"><div class="row2"><div class="field"><label for="mA">Name 1</label><input id="mA" required placeholder="Alex"></div><div class="field"><label for="mB">Name 2</label><input id="mB" required placeholder="Sam"></div></div>
+<button class="btn btn-primary btn-block" type="submit">Calculate</button></form></div>
+<div class="card"><h3>Your match</h3><div id="matchOut" class="result"><p class="muted">Enter two names.</p></div></div></div></section>
+
+<section id="calendar"><div class="wrap"><div class="eyebrow">Tool 5</div><h2>Live love-days calendar</h2><p class="muted">Sorted by what’s next. Qixi follows the lunar calendar and is updated each year.</p>
+<div class="grid g4" id="loveCal"></div></div></section>

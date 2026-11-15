@@ -1,0 +1,17 @@
+---
+layout: default
+title: "Number Decoder: What Does My Number Mean? (Chinese Slang + Numerology)"
+description: "Free number decoder. Enter any number — phone, date, price, plate — to see its Chinese slang reading, digit meanings, numerology root, patterns and luck score."
+b: ""
+---
+<section class="hero" style="padding-bottom:10px"><div class="narrow"><div class="eyebrow">Number decoder</div><h1>What does <span class="grad-text">your number</span> mean?</h1>
+<p class="lead">Phone numbers, dates, prices, licence plates, a number you keep seeing — decode it with Chinese homophones, numerology and pattern detection.</p>
+<form id="decoderForm" class="card" style="margin-top:20px"><label for="decoderInput">Enter digits (up to 20)</label>
+<div class="inline-form"><input id="decoderInput" class="mono" inputmode="numeric" autocomplete="off" data-default="520998" style="font-size:1.4rem;letter-spacing:2px"><button class="btn btn-primary" type="submit">Decode</button></div>
+<div class="pill-row" style="margin-top:12px"><button type="button" class="chip" data-try="520">520</button><button type="button" class="chip" data-try="1314">1314</button><button type="button" class="chip" data-try="5201314">5201314</button><button type="button" class="chip" data-try="998">998</button><button type="button" class="chip" data-try="168">168</button><button type="button" class="chip" data-try="888">888</button><button type="button" class="chip" data-try="9420">9420</button><button type="button" class="chip" data-try="250">250</button><button type="button" class="chip" data-try="20260520">20260520</button></div></form></div></section>
+<section style="padding-top:10px"><div class="narrow"><div class="card" id="decoderOut" aria-live="polite"></div>
+<div class="article" style="margin-top:40px"><h2>How the decoder works</h2>
+<p>Each digit has one or more Mandarin readings that sound like everyday words — 5 like 我 (I), 2 like 爱 (love), 9 like 久 (long-lasting), 8 like 发 (prosper). The decoder first looks for known multi-digit codes (the longest match wins, so 5201314 beats 520 + 1314), then reads remaining digits one by one.</p>
+<p>The <b>auspiciousness score</b> weighs digits by their traditional symbolism: 8 and 9 add the most, 6 and 2 add some, 4 subtracts. The <b>root number</b> is the classic numerology reduction (keeping master numbers 11, 22 and 33). Patterns such as mirrors, repeats and sequences are flagged too.</p>
+<p class="small muted">For culture and fun — not a prediction or advice.</p></div></div></section>
+{% include report.html %}
